@@ -17,6 +17,8 @@ public class Swing extends JFrame{
 	JRadioButton Letters, Numbers;
 	JTextField cumulativeText;
 	
+	JButton[] cumulativeButtonArray = {button2, button3, button4, button5};
+	
 	static double[] unweightedGP = new double[] { 4.33, 4.00, 3.67, 3.33, 3.00,
 		2.67, 2.33, 2.00, 1.67, 1.33, 1.00, .67, 0 };
 
@@ -65,104 +67,104 @@ public class Swing extends JFrame{
 		
 		use1 = new JCheckBox();
 		use1.setFocusable(false);
-		use1.setSelected(false);
+		use1.setSelected(true);
 		thePanel.add(use1);
 		JLabel label1 = new JLabel("Class 1:");
 		thePanel.add(label1);
 		percent1 = new JTextField("",5);
 		thePanel.add(percent1);
-		credits1 = new JTextField("",2);
+		credits1 = new JTextField("5",2);
 		thePanel.add(credits1);
 		weighted1 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted1);
 		
 		use2 = new JCheckBox();
 		use2.setFocusable(false);
-		use2.setSelected(false);
+		use2.setSelected(true);
 		thePanel.add(use2);
 		JLabel label2 = new JLabel("Class 2:");
 		thePanel.add(label2);
 		percent2 = new JTextField("",5);
 		thePanel.add(percent2);
-		credits2 = new JTextField("",2);
+		credits2 = new JTextField("5",2);
 		thePanel.add(credits2);
 		weighted2 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted2);
 		
 		use3 = new JCheckBox();
 		use3.setFocusable(false);
-		use3.setSelected(false);
+		use3.setSelected(true);
 		thePanel.add(use3);
 		JLabel label3 = new JLabel("Class 3:");
 		thePanel.add(label3);
 		percent3 = new JTextField("",5);
 		thePanel.add(percent3);
-		credits3 = new JTextField("",2);
+		credits3 = new JTextField("5",2);
 		thePanel.add(credits3);
 		weighted3 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted3);
 		
 		use4 = new JCheckBox();
 		use4.setFocusable(false);
-		use4.setSelected(false);
+		use4.setSelected(true);
 		thePanel.add(use4);
 		JLabel label4 = new JLabel("Class 4:");
 		thePanel.add(label4);
 		percent4 = new JTextField("",5);
 		thePanel.add(percent4);
-		credits4 = new JTextField("",2);
+		credits4 = new JTextField("5",2);
 		thePanel.add(credits4);
 		weighted4 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted4);
 		
 		use5 = new JCheckBox();
 		use5.setFocusable(false);
-		use5.setSelected(false);
+		use5.setSelected(true);
 		thePanel.add(use5);
 		JLabel label5 = new JLabel("Class 5:");
 		thePanel.add(label5);
 		percent5 = new JTextField("",5);
 		thePanel.add(percent5);
-		credits5 = new JTextField("",2);
+		credits5 = new JTextField("5",2);
 		thePanel.add(credits5);
 		weighted5 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted5);
 		
 		use6 = new JCheckBox();
 		use6.setFocusable(false);
-		use6.setSelected(false);
+		use6.setSelected(true);
 		thePanel.add(use6);
 		JLabel label6 = new JLabel("Class 6:");
 		thePanel.add(label6);
 		percent6 = new JTextField("",5);
 		thePanel.add(percent6);
-		credits6 = new JTextField("",2);
+		credits6 = new JTextField("5",2);
 		thePanel.add(credits6);
 		weighted6 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted6);
 		
 		use7 = new JCheckBox();
 		use7.setFocusable(false);
-		use7.setSelected(false);
+		use7.setSelected(true);
 		thePanel.add(use7);
 		JLabel label7 = new JLabel("Class 7:");
 		thePanel.add(label7);
 		percent7 = new JTextField("",5);
 		thePanel.add(percent7);
-		credits7 = new JTextField("",2);
+		credits7 = new JTextField("5",2);
 		thePanel.add(credits7);
 		weighted7 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted7);
 		
 		use8 = new JCheckBox();
 		use8.setFocusable(false);
-		use8.setSelected(false);
+		use8.setSelected(true);
 		thePanel.add(use8);
 		JLabel label8 = new JLabel("Class 8:");
 		thePanel.add(label8);
 		percent8 = new JTextField("",5);
 		thePanel.add(percent8);
-		credits8 = new JTextField("",2);
+		credits8 = new JTextField("5",2);
 		thePanel.add(credits8);
 		weighted8 = new JCheckBox("Weighted    ");
 		thePanel.add(weighted8);
@@ -251,10 +253,33 @@ public class Swing extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			if(e.getSource() == button2){
-					
-				String text;
+// Optimizaition for all 4 buttons
+// Push buttons to an array and perform check iterativly through the array
+//		 for(JButton obj : cumulativeButtonArray){
+//			System.out.println(obj);
+//			if(e.getSource() == obj){
+//					
+//				String text;
+//				
+//					if(!cumulativeText.getText().equals("")){
+//						text = Regex("\\d*[.]?\\d*",cumulativeText.getText());
+//						cumulativeText.setText("");
+//					}else{
+//						text = Double.toString(weightedGPA);
+//					}
+//					
+//					if(text == null){
+//						text = "0.00";
+//					}
+//					
+//					obj.setText(text);
+//				}
+//			}
 				
+			if(e.getSource() == button2){
+				
+				String text;
+					
 					if(!cumulativeText.getText().equals("")){
 						text = Regex("\\d*[.]?\\d*",cumulativeText.getText());
 						cumulativeText.setText("");
@@ -262,14 +287,13 @@ public class Swing extends JFrame{
 						text = Double.toString(weightedGPA);
 					}
 					
-					if(text == null){
+					if(text ==  null){
 						text = "0.00";
 					}
 					
 					button2.setText(text);
-					
 				}
-				
+			
 				if(e.getSource() == button3){
 					
 				String text;
@@ -381,14 +405,14 @@ public class Swing extends JFrame{
 					percent7.setText("");
 					percent8.setText("");
 
-					credits1.setText("");
-					credits2.setText("");
-					credits3.setText("");
-					credits4.setText("");
-					credits5.setText("");
-					credits6.setText("");
-					credits7.setText("");
-					credits8.setText("");
+					credits1.setText("5");
+					credits2.setText("5");
+					credits3.setText("5");
+					credits4.setText("5");
+					credits5.setText("5");
+					credits6.setText("5");
+					credits7.setText("5");
+					credits8.setText("5");
 				}
 			
 			
